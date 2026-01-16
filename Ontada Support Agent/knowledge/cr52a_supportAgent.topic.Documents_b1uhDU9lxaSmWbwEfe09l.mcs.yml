@@ -1,0 +1,7 @@
+# Name: Biostats
+# This knowledge source provides information found in Documents SharePoint.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  site: https://mckessoncorp.sharepoint.com/sites/GRPRWEBiostats/Shared%20Documents
+  additionalSearchTerms:

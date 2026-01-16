@@ -1,0 +1,21 @@
+﻿displayName: RWR-Analysis-Assistant
+schemaName: auto_agent_sg-kr
+accessControlPolicy: ChatbotReaders
+authenticationMode: Integrated
+authenticationTrigger: Always
+configuration:
+  settings:
+    GenerativeActionsEnabled: false
+
+  isAgentConnectable: true
+  gPTSettings:
+    defaultSchemaName: auto_agent_sg-kr.gpt.default
+
+  aISettings:
+    useModelKnowledge: true
+    isFileAnalysisEnabled: true
+    isSemanticSearchEnabled: true
+    optInUseLatestModels: false
+
+template: default-2.1.0
+language: 1033

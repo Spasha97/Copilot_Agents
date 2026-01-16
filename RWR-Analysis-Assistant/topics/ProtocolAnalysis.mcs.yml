@@ -1,0 +1,39 @@
+# Name: Protocol Analysis
+# Guide users through uploading a protocol PDF and outline the analysis workflow.
+```CopilotStudio
+# Name: Protocol Analysis
+# Guide users through uploading a protocol PDF and outline the analysis workflow.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Protocol Analysis
+    includeInOnSelectIntent: true
+    triggerQueries:
+      - analyze protocol
+      - protocol analysis
+      - review study protocol
+      - extract study design
+      - summarize statistical analysis plan
+
+  actions:
+    - kind: SendActivity
+      id: sendMessage_intro
+      activity: |-
+        I can analyze your real-world research protocol. Please upload the PDF (or share a link I can access).
+        Once received, I'll read the document using its headers to stay aligned with the original structure.
+
+    - kind: SendActivity
+      id: sendMessage_scope
+      activity: |-
+        What you'll get:
+        1) Key study design details (objectives, population, design, endpoints, timelines).
+        2) Variable definitions (sources, coding, derivations, codelists).
+        3) Statistical analysis plan (populations, estimands, models, covariates, missing data, sensitivity analyses).
+
+    - kind: SendActivity
+      id: sendMessage_next
+      activity: |-
+        If the PDF is ready, upload it now. Tell me any priorities (sections to focus on, known gaps), and I'll start the review.
+```

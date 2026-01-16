@@ -1,0 +1,7 @@
+# Name: RWR Publications
+# This knowledge source provides information found in Documents SharePoint.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  site: https://mckessoncorp.sharepoint.com/sites/GRPRWRScientificPublications/Shared%20Documents
+  additionalSearchTerms:

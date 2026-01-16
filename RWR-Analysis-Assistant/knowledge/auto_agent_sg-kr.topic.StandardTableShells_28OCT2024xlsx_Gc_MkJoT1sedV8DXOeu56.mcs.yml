@@ -1,0 +1,6 @@
+# Name: StandardTableShells_28OCT2024.xlsx
+# This knowledge source provides information found in StandardTableShells_28OCT2024.xlsx SharePoint.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  site: https://mckessoncorp.sharepoint.com/sites/GRPRWRScientificOrganization/Shared%20Documents/07.%20Analysis/Table%20shells/StandardTableShells_28OCT2024.xlsx

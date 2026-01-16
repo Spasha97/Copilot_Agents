@@ -1,0 +1,6 @@
+# Name: Ontada Biostatistics Analysis Dataset Specification Template_20Nov25.xlsx
+# This knowledge source provides information found in Ontada Biostatistics Analysis Dataset Specification Template_20Nov25.xlsx SharePoint.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  site: https://mckessoncorp.sharepoint.com/sites/GRPRWRScientificOrganization/Shared%20Documents/07.%20Analysis/Analysis%20Dataset%20Specification%20Template/Ontada%20Biostatistics%20Analysis%20Dataset%20Specification%20Template_20Nov25.xlsx

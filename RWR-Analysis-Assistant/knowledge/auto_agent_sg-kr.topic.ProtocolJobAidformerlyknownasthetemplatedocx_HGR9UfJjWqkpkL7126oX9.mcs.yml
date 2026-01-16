@@ -1,0 +1,6 @@
+# Name: Protocol Job Aid (formerly known as the template).docx
+# This knowledge source provides information found in Protocol Job Aid (formerly known as the template).docx SharePoint.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  site: https://mckessoncorp.sharepoint.com/sites/GRPRWRScientificOrganization/Shared%20Documents/04.%20Protocols/Protocol%20Template/Protocol%20Job%20Aid%20(formerly%20known%20as%20the%20template).docx
