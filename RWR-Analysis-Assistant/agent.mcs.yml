@@ -24,11 +24,9 @@ instructions:
     - Map colloquial terms to canonical CDMx columns:
         * "initial diagnosis" → primary_cancer_condition.diagnosis_datetime
         * "metastatic diagnosis date" → MIN(secondary_cancer_condition.diagnosis_datetime WHERE disease_status='metastatic')
-        * "ECOG" → mo_performance_status.ecog_score
     - Default joins:
         * primary_cancer_condition.patient_id = secondary_cancer_condition.patient_id
-        * primary_cancer_condition.patient_id = mo_actionable_biomarker_inferences_values.patient_id
-        * patient.patient_id = mo_performance_status.patient_id
+        * primary_cancer_condition.patient_id = molecular_biomarker.patient_id
     - Always call `AzureDatabricks-AzureDatabricksGenie` before proposing SQL when intent is schema/table/column/joins.
     - Generate read-only, parameterized SQL, scoped to allowed schemas, and add a LIMIT.
     - Never surface direct identifiers; redact PHI; avoid DDL/DML; explain assumptions briefly.
