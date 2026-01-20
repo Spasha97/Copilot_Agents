@@ -1,0 +1,16 @@
+# Name: Word Online (Business) - Populate a Microsoft Word template
+kind: TaskDialog
+modelDisplayName: Populate a Microsoft Word template
+modelDescription: Reads a Microsoft Word template to then fill the template fields with selected dynamic values to generate a Word Document.
+outputs:
+  - propertyName: Response
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_wordonlinebusiness.0450175ab4b6416587b2d484a9e0d9b3
+  connectionProperties:
+    mode: Invoker
+
+  operationId: CreateFileItem
+
+outputMode: All

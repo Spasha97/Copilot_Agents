@@ -1,0 +1,36 @@
+# Name: SharePoint - Generate document using Microsoft Syntex (preview)
+kind: TaskDialog
+modelDisplayName: Generate document using Microsoft Syntex (preview)
+modelDescription: "Use this action to create documents based on modern templates from Microsoft Syntex. This preview requires a Syntex license. Pricing is subject to change. For more info see: https://docs.microsoft.com/en-us/microsoft-365/contentunderstanding/content-assembly."
+outputs:
+  - propertyName: DisplayName
+
+  - propertyName: ETag
+
+  - propertyName: FileLocator
+
+  - propertyName: Id
+
+  - propertyName: IsFolder
+
+  - propertyName: ItemId
+
+  - propertyName: LastModified
+
+  - propertyName: MediaType
+
+  - propertyName: Name
+
+  - propertyName: Path
+
+  - propertyName: Size
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_sharepointonline.662c87b6127945e48f5b450acd41f7a8
+  connectionProperties:
+    mode: Invoker
+
+  operationId: CreateContentAssemblyDocument
+
+outputMode: All

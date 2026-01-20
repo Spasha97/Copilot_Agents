@@ -1,0 +1,16 @@
+# Name: SharePoint - List root folder
+kind: TaskDialog
+modelDisplayName: List root folder
+modelDescription: Returns files in the root SharePoint folder.
+outputs:
+  - propertyName: Response
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_sharepointonline.662c87b6127945e48f5b450acd41f7a8
+  connectionProperties:
+    mode: Invoker
+
+  operationId: ListRootFolder
+
+outputMode: All

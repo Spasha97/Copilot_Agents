@@ -1,0 +1,16 @@
+# Name: SharePoint - Extract folder
+kind: TaskDialog
+modelDisplayName: Extract folder
+modelDescription: "Extracts an archive file into a SharePoint folder (example: .zip)."
+outputs:
+  - propertyName: Response
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_sharepointonline.662c87b6127945e48f5b450acd41f7a8
+  connectionProperties:
+    mode: Invoker
+
+  operationId: ExtractFolderV2
+
+outputMode: All

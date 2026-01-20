@@ -1,0 +1,16 @@
+# Name: SharePoint - Create sharing link for a file or folder
+kind: TaskDialog
+modelDisplayName: Create sharing link for a file or folder
+modelDescription: Create sharing link for a file or folder.
+outputs:
+  - propertyName: link.webUrl
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_sharepointonline.662c87b6127945e48f5b450acd41f7a8
+  connectionProperties:
+    mode: Invoker
+
+  operationId: CreateSharingLink
+
+outputMode: All

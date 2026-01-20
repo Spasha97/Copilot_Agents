@@ -1,0 +1,54 @@
+# Name: Azure Databricks - Execute a SQL statement
+kind: TaskDialog
+modelDisplayName: Execute a SQL statement
+modelDescription: Execute a SQL statement and optionally await its results for a specified time.
+outputs:
+  - propertyName: manifest.chunks
+
+  - propertyName: manifest.format
+
+  - propertyName: manifest.schema.column_count
+
+  - propertyName: manifest.schema.columns
+
+  - propertyName: manifest.total_byte_count
+
+  - propertyName: manifest.total_chunk_count
+
+  - propertyName: manifest.total_row_count
+
+  - propertyName: manifest.truncated
+
+  - propertyName: result.byte_count
+
+  - propertyName: result.chunk_index
+
+  - propertyName: result.data_array
+
+  - propertyName: result.external_links
+
+  - propertyName: result.next_chunk_index
+
+  - propertyName: result.next_chunk_internal_link
+
+  - propertyName: result.row_count
+
+  - propertyName: result.row_offset
+
+  - propertyName: statement_id
+
+  - propertyName: status.error.error_code
+
+  - propertyName: status.error.message
+
+  - propertyName: status.state
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_databricks.84b39534c17a468090ee487c632dd782
+  connectionProperties:
+    mode: Invoker
+
+  operationId: SqlExecuteStatement
+
+outputMode: All

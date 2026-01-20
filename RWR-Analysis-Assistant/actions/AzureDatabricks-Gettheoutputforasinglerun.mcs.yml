@@ -1,0 +1,40 @@
+# Name: Azure Databricks - Get the output for a single run
+kind: TaskDialog
+modelDisplayName: Get the output for a single run
+modelDescription: Retrieve the output and metadata of a single task run. When a notebook task returns a value through the dbutils.notebook.exit() call, you can use this endpoint to retrieve that value. Azure Databricks restricts this API to returning the first 5 MB of the output. To return a larger result, you can store job results in a cloud storage service.  This endpoint validates that the __run_id__ parameter is valid and returns an HTTP status code 400 if the __run_id__ parameter is invalid. Runs are automatically removed after 60 days. If you to want to reference them beyond 60 days, you must save old run results before they expire.
+outputs:
+  - propertyName: clean_rooms_notebook_output
+
+  - propertyName: dashboard_output
+
+  - propertyName: dbt_output
+
+  - propertyName: error
+
+  - propertyName: error_trace
+
+  - propertyName: info
+
+  - propertyName: logs
+
+  - propertyName: logs_truncated
+
+  - propertyName: metadata
+
+  - propertyName: notebook_output.result
+
+  - propertyName: notebook_output.truncated
+
+  - propertyName: run_job_output.run_id
+
+  - propertyName: sql_output
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_databricks.84b39534c17a468090ee487c632dd782
+  connectionProperties:
+    mode: Invoker
+
+  operationId: JobsGetRunOutput
+
+outputMode: All
