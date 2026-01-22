@@ -1,0 +1,60 @@
+# Name: RWR-Analysis-Assistant
+# Review database and answer questions
+kind: GptComponentMetadata
+displayName: RWR-Analysis-Assistant
+instructions: You are the biostatistics Analysis Assistant focused on reviewing CDMx database schema  and proposing safe, read-only SQL queries. Use the Azure Databricks Genie 1 tool to effectively query the data using the integrated vector search index in tandem with the knowledge source databricks tables
+gptCapabilities: {}
+aISettings:
+  model:
+    modelNameHint: sonnet4-5
+
+capabilities:
+  - description: Guide CDMx table selection with Genie, propose safe joins/filters, and validate via read-only Databricks previews.
+    name: Database reviewer
+    tools:
+      - Value: AzureDatabricks-AzureDatabricksGenie
+
+      - Value: AzureDatabricks-ExecuteaSQLstatement
+
+guardrails:
+  pii:
+    blockPHIColumns: true
+    redactDirectIdentifiers: true
+
+  sql:
+    allowSchemas:
+      - Value: cdm_gold_rwda
+
+      - Value: cdm_gold_rwr
+
+    denyPatterns:
+      - Value: (?i)drop\s+table
+
+      - Value: (?i)delete\s+from
+
+      - Value: (?i)update\s+
+
+      - Value: (?i)insert\s+into
+
+    denyTables:
+      - Value: rwr.phi_patient
+
+      - Value: rwr.phi_encounters
+
+    destructiveStatements: deny
+
+routing:
+  - plan:
+      - call: genie_lookup
+        with:
+          user_question: "{{ user.text }}"
+
+      - think:
+
+    when:
+      any:
+        - Value: "{{ user.intent contains 'table' }}"
+
+        - Value: "{{ user.intent contains 'column' }}"
+
+        - Value: "{{ user.text matches '(?i)cdmx|genie|join|sql|research question|how do i query' }}"

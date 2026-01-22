@@ -1,0 +1,16 @@
+# Name: SharePoint - Get all lists and libraries
+kind: TaskDialog
+modelDisplayName: Get all lists and libraries
+modelDescription: Get all lists and libraries.
+outputs:
+  - propertyName: value
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_sharepointonline.662c87b6127945e48f5b450acd41f7a8
+  connectionProperties:
+    mode: Invoker
+
+  operationId: GetAllTables
+
+outputMode: All

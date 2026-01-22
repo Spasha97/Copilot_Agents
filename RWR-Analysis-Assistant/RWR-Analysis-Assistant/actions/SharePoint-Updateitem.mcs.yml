@@ -1,0 +1,16 @@
+# Name: SharePoint - Update item
+kind: TaskDialog
+modelDisplayName: Update item
+modelDescription: Updates an item in a SharePoint list.
+outputs:
+  - propertyName: Response
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_sharepointonline.662c87b6127945e48f5b450acd41f7a8
+  connectionProperties:
+    mode: Invoker
+
+  operationId: PatchItem
+
+outputMode: All

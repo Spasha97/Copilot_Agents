@@ -1,0 +1,14 @@
+# Name: Conversation Start
+# This system topic triggers when the agent receives an Activity indicating the beginning of a new conversation. If you do not want the agent to initiate the conversation, disable this topic.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendMessage_M0LuhV
+      activity:
+        text:
+          - Hi, I'm {System.Bot.Name}. I can review real-world research protocols. Please upload the protocol PDF so I can parse it by headers and pull study design details, variable definitions, and the statistical analysis plan.
+        speak:
+          - Hi, I'm {System.Bot.Name}. Please upload the protocol PDF so I can analyze its sections, study design details, variables, and statistics.

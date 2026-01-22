@@ -1,0 +1,16 @@
+# Name: Azure Databricks - Trigger a new job run
+kind: TaskDialog
+modelDisplayName: Trigger a new job run
+modelDescription: Run a job and return the run_id of the triggered run.
+outputs:
+  - propertyName: run_id
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_databricks.84b39534c17a468090ee487c632dd782
+  connectionProperties:
+    mode: Invoker
+
+  operationId: JobsRunNow
+
+outputMode: All

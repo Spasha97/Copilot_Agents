@@ -1,0 +1,16 @@
+# Name: Word Online (Business) - Create a Microsoft Word document with the given content
+kind: TaskDialog
+modelDisplayName: Create a Microsoft Word document with the given content
+modelDescription: Creates a Microsoft Word file with the given content in the root directory (use only from Copilot Studio)
+outputs:
+  - propertyName: Response
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_wordonlinebusiness.0450175ab4b6416587b2d484a9e0d9b3
+  connectionProperties:
+    mode: Invoker
+
+  operationId: CreateWordFileWithContent
+
+outputMode: All

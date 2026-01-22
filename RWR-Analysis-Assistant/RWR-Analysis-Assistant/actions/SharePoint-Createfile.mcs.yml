@@ -1,0 +1,36 @@
+# Name: SharePoint - Create file
+kind: TaskDialog
+modelDisplayName: Create file
+modelDescription: Uploads a file to a SharePoint site. Make sure to pick an existing library.
+outputs:
+  - propertyName: DisplayName
+
+  - propertyName: ETag
+
+  - propertyName: FileLocator
+
+  - propertyName: Id
+
+  - propertyName: IsFolder
+
+  - propertyName: ItemId
+
+  - propertyName: LastModified
+
+  - propertyName: MediaType
+
+  - propertyName: Name
+
+  - propertyName: Path
+
+  - propertyName: Size
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: auto_agent_sg-kr.shared_sharepointonline.662c87b6127945e48f5b450acd41f7a8
+  connectionProperties:
+    mode: Invoker
+
+  operationId: CreateFile
+
+outputMode: All

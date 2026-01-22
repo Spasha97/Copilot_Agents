@@ -1,0 +1,43 @@
+# Name: Greeting
+# This topic is triggered when the user greets the agent.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Greeting
+    includeInOnSelectIntent: false
+    triggerQueries:
+      - Good afternoon
+      - Good morning
+      - Hello
+      - Hey
+      - Hi
+
+  actions:
+    - kind: SendActivity
+      id: sendMessage_abmysR
+      activity:
+        text:
+          - |
+              Hi there! I’m your oncology EHR data assistant. I’ll use the Databricks Genie Space and return answers with a consistent layout: brief answer, methods/filters, metrics table, key findings, caveats, next steps.
+
+              Quick starts you can try:
+              • Summarize patient counts by cancer type and stage for the last 24 months.
+              • Trend first-line therapy starts for metastatic lung cancer by regimen class since 2021.
+              • Profile biomarker testing rates and turnaround times for breast cancer.
+              • Compare 6-month discontinuation rates across regimens for colorectal cancer.
+              • Estimate median time-to-next-treatment for patients on therapy X with baseline ECOG data.
+
+              Example output format:
+              1) Brief answer: "Metastatic NSCLC 1L starts rose ~12% YoY." 
+              2) Method/filters: CDMx oncology EHR; dx=NSCLC metastatic; 1L start date 2021-01-01 to 2025-12-31; exclude trial flags.
+              3) Metrics table: patients by quarter with count and % of 1L cohort.
+              4) Key findings: growth fastest in IO+chemo; declines in chemo-only.
+              5) Caveats: missing stage in ~8%; left-censoring pre-2020.
+              6) Next steps: cut by PD-L1 strata; view time-to-next-treatment.
+        speak:
+          - Hello, <break strength="medium" /> how can I help?
+
+    - kind: CancelAllDialogs
+      id: cancelAllDialogs_01At22
