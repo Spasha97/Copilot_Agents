@@ -3,9 +3,9 @@ kind: TaskDialog
 inputs:
   - kind: ManualTaskInput
     propertyName: "'genie_space_id'"
-    value: 01f0ab9c7a1b1e2eb5332ebdc231e9e3
+    value: 01f0f70b356f1ad483a0c11087ac3f30
 
-modelDisplayName: Azure Databricks Genie 1
+modelDisplayName: Azure Databricks Genie
 modelDescription: Query Genie spaces to get insights from your data.
 action:
   kind: InvokeExternalAgentTaskAction

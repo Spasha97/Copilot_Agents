@@ -1,0 +1,9 @@
+# Name: tnm_stage_group, primary_cancer_condition, patient_outcomes, molecular_biomarker, karnofsky_performa
+# This knowledge source answers questions found in the following Azure Databricks items: tnm_stage_group, primary_cancer_condition, patient_outcomes, molecular_biomarker, karnofsky_performance_status, derived_metastatic_patient_indicator, ecog_performance_status, cancer_related_surgical_observations, cancer_related_medication_request, cancer_related_medication_administration, cancer_patient, cancer_morphology
+kind: KnowledgeSourceConfiguration
+source:
+  kind: FederatedStructuredSearchSource
+  connectionProperties:
+    mode: Invoker
+
+  skillConfiguration: tnm_stage_group_primary_cancer_conditionpatient_outcomesmolecular_biomarkerkar_LD6dFdMBJ0r_aTMLnKeEz

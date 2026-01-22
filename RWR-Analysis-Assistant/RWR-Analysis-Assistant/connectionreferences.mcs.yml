@@ -3,6 +3,8 @@
     connectorId: /providers/Microsoft.PowerApps/apis/shared_databricks
   - connectionReferenceLogicalName: auto_agent_sg-kr.shared_databricks.4de49858738b458890e7b8b4ea9e3565
     connectorId: /providers/Microsoft.PowerApps/apis/shared_databricks
+  - connectionReferenceLogicalName: auto_agent_sg-kr.shared_databricks.4de49858738b458890e7b8b4ea9e3565
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_databricks
   - connectionReferenceLogicalName: auto_agent_sg-kr.shared_databricks.84b39534c17a468090ee487c632dd782
     connectorId: /providers/Microsoft.PowerApps/apis/shared_databricks
   - connectionReferenceLogicalName: auto_agent_sg-kr.shared_databricks.84b39534c17a468090ee487c632dd782
